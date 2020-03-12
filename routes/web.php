@@ -23,3 +23,6 @@ Route::get('/admin', function () {
 Route::get('/file', function () {
     return view('admin/file-manager');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

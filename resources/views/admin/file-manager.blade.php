@@ -9,7 +9,7 @@
             <li class="breadcrumb-item active">Tables</li>
         </ol>
         <div class="card mb-4">
-            <div class="card-body">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the 	<input type="button" class="btn btn-primary" value="File Manager">
+            <div class="card-body">DataTables is a third party plugin that is used to generate the demo table below. 
             </div>
             <form action="">
             	<textarea id="my-editor" name="content" class="form-control">{!! old('content', 'test editor content') !!}</textarea>
@@ -77,12 +77,14 @@
 @section('script')
 <script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 <script>
-  var options = {
-    filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
-    filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
-    filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-    filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
-  };
-  $('textarea.my-editor').ckeditor(options);
+    var options = {
+    filebrowserImageBrowseUrl: '/filemanager?type=Images',
+    filebrowserImageUploadUrl: '/filemanager/upload?type=Images&_token=',
+    filebrowserBrowseUrl: '/filemanager?type=Files',
+    filebrowserUploadUrl: '/filemanager/upload?type=Files&_token='
+    };
+    // $('textarea.my-editor').ckeditor(options);
+    CKEDITOR.replace('my-editor', options);
 </script>
+
 @endsection
