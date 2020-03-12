@@ -17,5 +17,9 @@ Route::get('/', function () {
 
 
 Route::get('/admin', function () {
-    return view('XXXXXXX');
+    return view('admin/dashboard');
+});
+
+Route::get('/file', function () {
+    return view('admin/file-manager');
 });
